@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Management System</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>  
+    <main class="min-vh-100">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- Form Inputs Section -->
+          <div class="col-lg-5 ">
+            <div class="form-section">
+              <header class="py-4">
+                <h1 class="text-center text-white">Students Management</h1>
+              </header>
+              <section class="form p-3">
+                <div class="mb-2">
+                  <label for="studentName" class="form-label fw-bolder"
+                    >Student Name</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="studentName"
+                    placeholder="Ex: Ahmed"
+                  />
+                  <div class="error text-danger ps-2 d-none">Can't be Blank!</div>
+                </div>
+               
+                <div class="mb-2">
+                  <label for="studentId" class="form-label fw-bolder"
+                    >Student Id</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="studentId"
+                    placeholder="Ex: 301507032003"
+                  />
+                  <div class="error text-danger ps-2 d-none">Can't be Blank!</div>
+                </div>
+                <div class="mb-2">
+                  <label for="studentPhone" class="form-label fw-bolder"
+                    >Student Phone</label
+                  >
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="studentPhone"
+                    placeholder="Ex: 01095935181"
+                  />
+                  <div class="error text-danger ps-2 d-none">Can't be Blank!</div>
+                </div>
+                <div class="mb-2">
+                  <label for="studentClass" class="form-label fw-bolder"
+                    >Student Class</label
+                  >
+                  <select name="classes" id="studentClass" class="form-select" >
+                    <option value="class1">Class 1</option>
+                    <option value="class2">Class 2</option>
+                    <option value="class3">Class 3</option>
+                    <option value="class4">Class 4</option>
+                    <option value="class5">Class 5</option>
+                    <option value="class6">Class 6</option>
+                  </select>
+                  <div class="error text-danger ps-2 d-none">Can't be Blank!</div>
+                </div>
+                <div class="pt-3">
+                  <button onclick="addStudent()" type="button" id="addStudent" class="btn text-white">
+                    Add Record
+                  </button>
+                  <button onclick="updateStudent()" id="updateStudent" class="btn text-white d-none">
+                    Update Record
+                  </button>
+                </div>
+              </section>
+            </div>
+          </div>
+          <!-- Display Data Section -->
+          <div class="col-lg-7 pt-4">
+            <div class="container-fluid">
+              <div class="row d-flex justify-content-between align-items-center">
+                <div class="col-md-7">
+                  <div class="search text-center mt-3">
+                    <input onkeyup="search(this.value)"
+                      class="form-control"
+                      list="datalistOptions"
+                      id="exampleDataList"
+                      placeholder="Search by Name or ID..."
+                    />
+                  </div>
+                </div>
+                <div class="col-md-3  mt-3">
+                  <div class="filter">
+                    <button
+                      id="filter"
+                      class="btn btn-dark dropdown-toggle"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Filter By <i class="fa-solid fa-filter mx-2"></i>
+                    </button>
+                    
+                    <div class="dropdown-menu dropdown-menu-dark">
+                      <option onclick="filteration(this.value)" class="dropdown-item" value="all">All</option>
+                      <option onclick="filteration(this.value)" class="dropdown-item" value="class1">Class 1</option>
+                      <option onclick="filteration(this.value)" class="dropdown-item" value="class2">Class 2</option>
+                      <option onclick="filteration(this.value)" class="dropdown-item" value="class3">Class 3</option>
+                      <option onclick="filteration(this.value)" class="dropdown-item" value="class4">Class 4</option>
+                      <option onclick="filteration(this.value)" class="dropdown-item" value="class5">Class 5</option>
+                      <option onclick="filteration(this.value)" class="dropdown-item" value="class6">Class  6</option>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="display-table row mt-4 overflow-auto border border-2 rounded-2">
+                <div class="col-12">
+                  <div class="table-responsive mt-3 h-100">
+                    <table class="table table-bordered table-dark table-hover text-center align-middle">
+                      <thead>
+                        <tr>
+                          <th>Index</th>
+                          <th>Name</th>
+                          <th>ID</th>
+                          <th>Phone</th>
+                          <th>Class</th>
+                          <th>Delete</th>
+                          <th>Update</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tableBody">
+                       <!-- add data-rows by JavaScript -->
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

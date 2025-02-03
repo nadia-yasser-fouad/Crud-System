@@ -1,0 +1,17 @@
+main {
+  background-color: #bf9288;
+}
+.display-table {
+  height: 80vh;
+}
+#addStudent {
+  background-color: #402523;
+}
+#updateStudent {
+  background-color: #733e32;
+}
+.form-control:focus,
+.form-select:focus {
+  box-shadow: 0 0 0 0.25rem rgba(64, 37, 35, 0.3) !important;
+  border-color: #402523 !important;
+}
